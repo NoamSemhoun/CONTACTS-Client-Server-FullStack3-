@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A Single Page Application</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style2.css">
+    <!--  -->
+</head>
+<body>
+    <main>
+        <div class="page active" id="home">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input id="se" type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="sp" type="password" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck" >
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                    
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Login" onclick="login_f()">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" data-target="list" class="nav-link">Signup Now</a>
+                    </span>
+                </div>
+            </div>
+            <a href="#" id="btn-display-contact" data-target="Contacts" class="nav-link" style="display:none;">Contacts</a>
+        </div>
+        
+        <div class="page" id="list">
+            <div class="form signup">
+                <span class="title">Registration</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="re" type="text" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="rp" type="password" class="password" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input id="rrp" type="password" class="password" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Signup" onclick="register()">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" data-target="home" class="nav-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page" id="Contacts">
+            <h1>Contacts</h1>
+            <li>
+                <a href="#" data-target="addContacts" class="nav-link">add Contacts</a>
+                <a href="#" data-target="searchContacts" class="nav-link">search Contacts</a>
+                <a href="#" data-target="delContacts" class="nav-link">delete Contacts</a>
+            
+            </li>
+            <a href="#" data-target="home" class="nav-link">LOGIN</a>
+                
+        </div>
+        <div class="page" id="addContacts">
+            <h1>ADD Contacts</h1>
+            <!--<button id="add_contact_template"> click to add </button>
+
+            <template id="add_contact">-->
+
+                <div id="add_contact">
+                    <div class="container mx-auto">
+                      <div >
+                        <div class="text-center">
+                          <br>
+                          <p >
+                            Fill up the form below in order to register a new contact.
+                            <br>
+
+                          </p>
+
+                        </div>
+                        <div >
+                          <div  id="formAddContact">
+                            <input type="hidden" name="access_key"  />
+                            <input type="hidden" name="subject"  />
+                            <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                  
+                            <div >
+                              <label for="name" >Full Name</label>
+                              <input type="text" name="name" id="name" placeholder="John Doe" required />
+                            </div>
+                            <div>
+                              <label for="email">Email Address</label>
+                              <input type="email" name="email" id="email" placeholder="you@company.com" required  />
+                            </div>
+                            <div >
+                              <label for="phone" >Phone Number</label>
+                              <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required />
+                            </div>
+                            
+                            <div >
+                              <button type="submit" onclick="AddUser()">
+                                Add User
+                              </button>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+           <!-- </template>-->
+
+            <a href="#" data-target="Contacts" class="nav-link">Contacts</a>
+                
+        </div>
+        <div class="page" id="searchContacts">
+            <h1>Search Contacts</h1>
+
+            <input type="search" id="mySearch" placeholder="enter a telephone mumber">
+
+            <button type="button" id="btn_search" onclick="SearchContact()">Search</button>
+
+            <p id="displayContact"></p>
+            <list id="contact_list"></list>
+
+
+            
+
+            <a href="#" data-target="Contacts" class="nav-link">Contacts</a>
+                
+        </div>
+        <div class="page" id="delContacts">
+            <h1>DEL Contacts</h1>
+           
+            <input type="text" name="phone" id="del_phone" placeholder="+1 (555) 1234-567" required />
+            <div >
+                <button type="submit" onclick="DelUser()">
+                  Delete this contact
+                </button>
+              </div>
+            <a href="#" data-target="Contacts" class="nav-link">Contacts</a>
+                
+        </div>
+
+        
+        
+    </main>
+    <script src="index.js"></script>
+    <script src="dataBase.js"></script>
+    <script src="fajax.js"></script>
+    <script src="network.js"></script>
+    <script src="server.js"></script>
+    
+
+</body>
+</html>
