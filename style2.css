@@ -17,9 +17,24 @@
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+
+  background-size: cover;
+  background-position: center center; /* Center the image within the container */
+  position: relative;
 }
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Images/reseau-de-contact-1409985717.png');
+  opacity: 0.2; /* Make the background image 70% transparent */
+  z-index: -1;
+}
+ 
 
 /* Navigation */
 nav {
@@ -49,10 +64,11 @@ nav a {
 
 .page.active {
   display: block;
+  background-color: rgba(83, 201, 255, 0.678);
 }
 
 .page h1 {
-  font-size: 28px;
+  font-size: 40px;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -244,9 +260,10 @@ nav a {
   
   #contact_list li {
     background-color: #c7e9b4;
-    border-radius: 5px;
+    border-radius: 12px;
     padding: 10px;
     margin-bottom: 10px;
+    vertical-align:middle;
   }
   
   
@@ -296,6 +313,10 @@ nav a {
   h1 {
     color: #ff0000; /* Red */
   }
+  h2 {
+    color: #ff0000; 
+    text-align: center;
+  }
   
   p {
     color: #008000; /* Green */
@@ -303,6 +324,7 @@ nav a {
   
   a {
     color: #0000ff; /* Blue */
+    background-color: #fcf9617e;
   }
   
   button {

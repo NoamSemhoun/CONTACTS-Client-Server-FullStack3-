@@ -271,13 +271,23 @@ function DisplayList(response){
 
     if (typeof(response)=='string' ){
         var listItem = document.createElement("li");
+     
         listItem.innerHTML = response;
         listElement.appendChild(listItem);
 
     }else{
         for (var i = 0; i < response.length; i++) {
             var listItem = document.createElement("li");
-            listItem.innerHTML = response[i][0] + " " + response[i][1];
+            
+             // Create a new img element for the profile picture
+             var profilePic = document.createElement("img");
+             profilePic.src = "Images/PROFIL.png"; 
+             profilePic.alt = response[i][0] + "'s profile picture"; // Add an alt attribute for accessibility
+             profilePic.width = "30"; // Add a width attribute to set the width of the image
+             profilePic.height = "30"; // Add a height attribute to set the height of the image
+ 
+             // Append the profile picture and text to the list item's innerHTML
+             listItem.innerHTML = profilePic.outerHTML + " &nbsp; " + response[i][0] + "  |  " + response[i][1];
             listElement.appendChild(listItem);
         }
     }
