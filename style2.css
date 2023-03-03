@@ -1,0 +1,320 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap');
+
+/* Colors */
+:root {
+  --primary-color: #007aff;
+  --background-color: #f2f2f7;
+  --text-color: #333;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Pages */
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+.page h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page li {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.page li a {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.page li a:hover {
+  background-color: #0063cc;
+}
+
+/* Forms */
+.form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  max-width: 500px;
+}
+
+.form .title {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.form .input-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form .input-field input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form .input-field input:focus {
+  outline: none;
+}
+
+.form .input-field .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.form .input-field .showHidePw {
+  cursor: pointer;
+}
+
+.form .checkbox-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form .checkbox-content {
+  display: flex;
+  align-items: center;
+}
+
+.form .checkbox-content input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.form .checkbox-content .text {
+  font-size: 16px;
+}
+
+.form .button {
+  text-align: center;
+}
+
+.form input[type='button'] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  }
+
+
+  /* Add Contact page */
+#addContacts {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  #add_contact_template {
+    padding: 10px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+  }
+  #formAddContact {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+  }
+  #formAddContact input[type='text'],
+  #formAddContact input[type='email'],
+  #formAddContact textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  #formAddContact label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  #formAddContact button {
+    padding: 10px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  #formAddContact button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Search Contact page */
+  #searchContacts {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  #searchContacts input[type='text'] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 70%;
+  }
+  #searchContacts button {
+    padding: 10px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  #searchContacts button:hover {
+    background-color: #0056b3;
+  }
+
+  #contact_list {
+    padding: 0;
+    margin: 0;
+  }
+  
+  #contact_list li {
+    background-color: #c7e9b4;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  #displayContact {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Delete Contact page */
+  #delContacts {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  #delContacts input[type='text'] {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 70%;
+  }
+  #delContacts button {
+    padding: 15px;
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  #delContacts button:hover {
+    background-color: #0056b3;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Add colors */
+  h1 {
+    color: #ff0000; /* Red */
+  }
+  
+  p {
+    color: #008000; /* Green */
+  }
+  
+  a {
+    color: #0000ff; /* Blue */
+  }
+  
+  button {
+    background-color: #ffcc00; /* Yellow */
+    color: #000000; /* Black */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for button */
+  button:hover {
+    background-color: #ffc107; /* Darker yellow */
+  }

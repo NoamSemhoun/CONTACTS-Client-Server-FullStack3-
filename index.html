@@ -113,7 +113,7 @@
                           <br>
                           <p >
                             Fill up the form below in order to register a new contact.
-                            <br>
+                            <br><br>
 
                           </p>
 
@@ -150,34 +150,38 @@
 
            <!-- </template>-->
 
+
+           <br><br>
             <a href="#" data-target="Contacts" class="nav-link">Contacts</a>
                 
         </div>
         <div class="page" id="searchContacts">
             <h1>Search Contacts</h1>
 
-            <input type="search" id="mySearch" placeholder="enter a telephone mumber">
+            <input type="search" id="mySearch" placeholder="enter a Telephone Number">
 
             <button type="button" id="btn_search" onclick="SearchContact()">Search</button>
+            <br><br>
 
             <p id="displayContact"></p>
             <list id="contact_list"></list>
 
 
-            
-
             <a href="#" data-target="Contacts" class="nav-link">Contacts</a>
                 
         </div>
         <div class="page" id="delContacts">
-            <h1>DEL Contacts</h1>
+            <h1>Delete a Contact</h1>
            
             <input type="text" name="phone" id="del_phone" placeholder="+1 (555) 1234-567" required />
+            <br><br>
             <div >
                 <button type="submit" onclick="DelUser()">
                   Delete this contact
                 </button>
               </div>
+
+              <br><br>
             <a href="#" data-target="Contacts" class="nav-link">Contacts</a>
                 
         </div>
